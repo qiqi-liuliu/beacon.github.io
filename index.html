@@ -71,7 +71,7 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        background-color:  ＃FFFFFF;
+        background-color: #ffffff;
         padding: 20px;
         border-radius: 10px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -156,9 +156,10 @@
         }
       }
 
-      // 显示弹出窗口
+      // 显示弹出窗口并隐藏蛋糕卡片
       function showPopup() {
         document.getElementById("popup").style.display = "block";
+        document.querySelector(".birthday-card").style.display = "none";
       }
 
       // 隐藏弹出窗口
