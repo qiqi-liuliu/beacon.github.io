@@ -5,6 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Interactive Happy Birthday!</title>
     <style>
+      @keyframes randomJump {
+        0%,
+        100% {
+          transform: translate(0, 0);
+          animation-timing-function: ease-in-out;
+        }
+        25% {
+          transform: translate(-10%, 20%);
+          animation-timing-function: ease-in;
+        }
+        50% {
+          transform: translate(10%, -10%);
+          animation-timing-function: ease-out;
+        }
+        75% {
+          transform: translate(-5%, 10%);
+          animation-timing-function: ease-in-out;
+        }
+      }
+
+      @keyframes jumpUp {
+        0%,
+        100% {
+          transform: translateY(0);
+          animation-timing-function: cubic-bezier(0.6, -0.28, 0.735, 0.045);
+        }
+        50% {
+          transform: translateY(-100px); /* 跳动幅度可以根据需要调整 */
+          animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+      }
+
       body {
         margin: 0;
         height: 100vh;
@@ -27,6 +59,8 @@
         overflow: hidden;
         cursor: pointer;
         position: relative;
+        /*animation: randomJump 4s infinite;*/
+        animation: jumpUp 3s infinite;
       }
       .birthday-cake {
         width: 250px;
@@ -37,7 +71,7 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        background-color: #d8b7b2;
+        background-color: #FF69B4;
         padding: 20px;
         border-radius: 10px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -66,14 +100,39 @@
     </div>
 
     <div class="popup" id="popup">
-      <h2>Happy Birthday!</h2>
+      <h2>Happy Birthday To Miss Beacon!</h2>
       <p>
-        Wishing you a day filled with happiness and a year filled with joy. May
-        your birthday be the start of a year filled with good health,
-        prosperity, and happiness. Here's to celebrating all the wonderful
-        moments that are yet to come! Cheers to you on your special day!
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        呜呜呜，先得和你道个歉。想必当你看到这的时候我已经错过了当天了。
+        由于我太纠结（一直在犹豫要买什么）以至于没有能赶在当天把这份礼物呈现在你面前喔。
+        又因为我技术太有限了，原本是想做更有交互界面的一个网页嘞，但是貌似不租个服务器有点写不出来这个网站，就只好用这另一种方式给你展示了。
+        <br />
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        掰手指头算算又是好久好久没见面了，而且去年居然都没有完成合影之约！都怪这个死鸟，比我还墨迹（虽然我自身的因素也占很大的一部分）。
+        因为地域问题，我们之间得联系也仅限于WeChat，就感觉好像没有认认真真好久没有聊过天了。
+        说实话也确实不知道你的近况如何嘞，然后某个人就又总是报喜不报忧呗。
+        灯塔小姐，就喜欢一个人在外头那么幸苦and委屈巴巴，然后给我们留个背影呗。
+        那就希望你是真的能够天天都能感觉到幸福开心吧，就像当初你总是给我们带来的那份温暖一样，还是一样的话哦，你不是一个人，拜托给小家一点作用嘞。
+        （而且我的承诺一直做效）
+        原本还是想认认真真写份手信的喔，但感觉这个比较有新意（虽然最后没能达到我的预期），怪我太菜了还穷hhhhh，没钱租服务器。
+        说好听点也是怕落了俗气，写不出什么华丽的词藻，而且感觉以这种形式可以很好保存这份回忆欸。
+        <br />
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 最后也不是最后，生日快乐（逾期版）！！
+        期待某天我们的重逢！到时候一定和你好好说道说道这几年的趣事。
+        其实超想大说特说，怕你觉得我太啰里啰唆嘞。
+        <br />
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        <b>From Six</b><button onclick="hidePopup()">Close</button>
       </p>
-      <button onclick="hidePopup()">Close</button>
     </div>
 
     <script>
